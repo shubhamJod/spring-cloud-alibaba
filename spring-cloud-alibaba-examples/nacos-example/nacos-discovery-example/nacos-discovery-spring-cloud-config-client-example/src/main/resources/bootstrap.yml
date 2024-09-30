@@ -1,14 +1,19 @@
 spring:
   application:
-    name: client
+    name: apu-gateway
+  profiles:
+    active: prod
   cloud:
     nacos:
       username: nacos
       password: nacos
       discovery:
         server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: b3404bc0-d7dc-4855-b519-570ed34cdaa7  # Example namespace ID
+        group: PROD
+        file-extension: yaml
     config:
       discovery:
         enabled: true
-  profiles:
-    active: dev
